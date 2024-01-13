@@ -27,7 +27,7 @@ const ForecastWidget = ({ coordinates }) => {
   const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    console.log("fired useEffect");
+    //console.log("fired useEffect");
 
     getForecast();
   }, []);
@@ -42,12 +42,12 @@ const ForecastWidget = ({ coordinates }) => {
       const res = await fetch(
         `${OPENWEATHER_URL}/forecast?appid=${OPENWEATHER_KEY}&lat=${latitude}&lon=${longitude}&units=metric`
       );
-      console.log(res);
+      //console.log(res);
 
       if (!res.ok) throw new Error("Errore, cannot fetch data");
 
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       return data.list;
     } catch (err) {
       console.log("ERROR: ", err);

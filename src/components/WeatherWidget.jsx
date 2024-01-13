@@ -17,7 +17,7 @@ const WeatherWidget = ({ coordinates }) => {
   const [fetchResult, setFetchResult] = useState(null);
 
   useEffect(() => {
-    console.log("fired useEffect");
+    //console.log("fired useEffect");
 
     getWeather();
   }, []);
@@ -32,12 +32,12 @@ const WeatherWidget = ({ coordinates }) => {
       const res = await fetch(
         `${OPENWEATHER_URL}/weather?appid=${OPENWEATHER_KEY}&lat=${latitude}&lon=${longitude}&units=metric`
       );
-      console.log(res);
+      //console.log(res);
 
       if (!res.ok) throw new Error("Errore, cannot fetch data");
 
       const data = await res.json();
-      console.log("data: ", data);
+      //console.log("data: ", data);
       const {
         weather,
         main,
@@ -51,7 +51,7 @@ const WeatherWidget = ({ coordinates }) => {
       } = data;
 
       const iconURL = `${WEATHER_ICON_URL}/${weather[0].icon}@2x.png`;
-      console.log(iconURL);
+      //console.log(iconURL);
       const actualWeather = {
         weather: {
           id: weather[0].id,
@@ -71,7 +71,7 @@ const WeatherWidget = ({ coordinates }) => {
         timezone,
         name,
       };
-      console.log("actual weather ", actualWeather);
+      //console.log("actual weather ", actualWeather);
 
       return actualWeather;
     } catch (err) {

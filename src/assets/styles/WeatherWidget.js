@@ -50,11 +50,8 @@ const CardBody = styled.div`
     border: 3px solid wheat;
   }
 
-  #details-container {
-    h3 {
-      border-bottom: 1px solid #black;
-      margin: 0 0 0.2rem 0;
-    }
+  div > h3 {
+    margin: 1rem 0 0.2rem 0;
   }
 `;
 
